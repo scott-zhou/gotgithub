@@ -277,11 +277,17 @@ GitHub 为每一个用户分配了一个二级域名\ ``<user-id>.github.io``\ �
 
    参见： https://github.com/gotgit/gotgit.github.io/blob/master/CNAME
 
-2. 然后更改域名\ ``www.worldhello.net``\ 的IP地址，指向域名\ ``gotgit.github.io``\
-   对应的IP地址（注意不是\ ``github.com``\ 的IP地址）。
+2. 转到域名提供商的配置页面，设置二级域名\ ``worldhello.net``\跳转到三级域名\ ``www.worldhello.net``\。
+   DNS修改生效时间最长可能需要一天。
 
-   完成域名的DNS指向后，可试着用\ ``ping``\ 或\ ``dig``\ 命令确认域名\
-   ``www.worldhello.net``\ 和\ ``gotgit.github.io``\ 指向同一IP地址。
+3. 在域名提供商的配置页面，创建CNAME记录，使子域名\ ``www``\指向\ ``gotgit.github.io``\。
+   DNS修改生效时间最长可能需要一天。
+
+4. 在域名提供商的配置页面，创建两条A记录，分别解析为IP地址\ ``192.30.252.153``\和\ ``192.30.252.154``\。
+   DNS修改生效时间最长可能需要一天。
+
+完成域名的DNS指向后，可试着用\ ``ping``\ 或\ ``dig``\ 命令确认域名\ ``www.worldhello.net``\
+和\ ``gotgit.github.io``\ 指向同一IP地址。
 
    ::
 
